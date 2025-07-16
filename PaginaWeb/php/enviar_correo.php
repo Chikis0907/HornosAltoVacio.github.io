@@ -1,22 +1,29 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = htmlspecialchars($_POST["nombre"]);
-    $email = htmlspecialchars($_POST["email"]);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $mensaje = htmlspecialchars($_POST["mensaje"]);
     $tipoConsulta = htmlspecialchars($_POST["tipoConsulta"]);
 
-    $to = "proyecto@grupoindustrialancor.com"; // Cambia a tu correo real
-    $subject = "Nuevo mensaje de contacto de Grupo Ancor";
-    $body = "Nombre: $nombre\nCorreo: $email\nConsulta: $tipoConsulta\n\nMensaje:\n$mensaje";
-    $headers = "From: contacto@grupoindustrialancor.com\r\n"; // Debe existir si usas hosting real
+    $destinatario = "proyecto@grupoindustrialancor.com";  // Puedes cambiar esto si deseas otro correo
+    $asunto = "Nuevo mensaje desde el sitio web";
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Mensaje enviado correctamente.'); window.location.href='contactanos.html';</script>";
+    $contenido = "
+        Nombre: $nombre\n
+        Email: $email\n
+        Tipo de consulta: $tipoConsulta\n
+        Mensaje:\n$mensaje
+    ";
+
+    $headers = "From: contacto@grupoindustrialancor.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    if (mail($destinatario, $asunto, $contenido, $headers)) {
+        echo "success";
     } else {
-        echo "<script>alert('Error al enviar.'); history.back();</script>";
+        echo "error";
     }
 } else {
-    http_response_code(403);
-    echo "Acceso denegado.";
+    echo "invalid_request";
 }
 ?>
