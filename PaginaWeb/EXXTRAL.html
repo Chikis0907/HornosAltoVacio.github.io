@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EXXTRAL® - Grupo Ancor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="img/groAncor.ico" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .encabezado-decorativo {
+      position: relative;
+      padding: 20px 0 100px;
+      background-color: #fff;
+    }
+    .encabezado-rosa {
+      background: linear-gradient(90deg, #7b00b3, #d83264);
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border-radius: 0 40px 40px 0;
+      width: 50%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .circulos_encabezado,
+    .burbujas-arriba,
+    .burbuja-derecha,
+    .mancha-fondo,
+    .mancha-izquierda {
+      position: absolute;
+      z-index: 1;
+      max-width: 100px;
+      pointer-events: none;
+    }
+    .circulos_encabezado { top: 0; right: 0; }
+    .burbujas-arriba { top: 550px; left: 10px; }
+    .mancha-fondo { bottom: -280px; right: 0; }
+    .burbuja-derecha { right: -30px; bottom: 20px; }
+    .mancha-izquierda { bottom: 10px; }
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+    footer {
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      .encabezado-rosa {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+      }
+      .circulos_encabezado,
+      .burbujas-arriba,
+      .burbuja-derecha,
+      .mancha-fondo,
+      .mancha-izquierda {
+        max-width: 60px;
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  
+  <div class="encabezado-decorativo">
+    <div class="encabezado-logo d-flex justify-content-around align-items-center flex-wrap gap-3 px-3">
+      <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="max-height: 45px;">
+      <img src="img/voestalphine.png" alt="Voestalpine" style="max-height: 45px;">
+      <img src="img/bohler.jpg" alt="Bohler" style="max-height: 45px;">
+    </div>
+    <div class="encabezado-rosa">EXXTRAL® - Grupo Ancor</div>
+    <img src="img/circulos_encabezado.JPG" alt="Círculos" class="circulos_encabezado">
+    <img src="img/burbujas_fondo1_arriba.JPG" alt="Burbujas" class="burbujas-arriba">
+    <img src="img/mancha_fondo.JPG" alt="Mancha fondo" class="mancha-fondo">
+  </div>
+
+   <!-- NAVBAR -->
+  <nav class="navbar navbar-light bg-light py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="height: 110px;">
+      </a>
+      <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+      </button>
+      <div class="d-none d-lg-flex gap-4 align-items-center">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="Acerca_de.html">Acerca de nosotros</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+            <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+            <li><a class="dropdown-item" href="Aceros.html">Aceros</a></li>
+            <li><a class="dropdown-item active" href="Afilados.html">Afilados</a></li>
+            <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+          </ul>
+        </div>
+        <a class="nav-link" href="contactanos.html">Contáctanos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENÚ OFFCANVAS -->
+  <div class="offcanvas offcanvas-end text-white" tabindex="-1" id="menuLateral" style="background-color: #11276d;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold">Grupo Industrial Ancor</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3 fs-6">
+      <a class="nav-link text-white" href="index.html"><i class="bi bi-house me-2"></i>Inicio</a>
+      <a class="nav-link text-white" href="Acerca_de.html"><i class="bi bi-info-circle me-2"></i>Acerca de nosotros</a>
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+          <i class="bi bi-gear me-2"></i>Servicios
+        </a>
+        <ul class="dropdown-menu bg-light">
+          <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+          <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+          <li><a class="dropdown-item" href="Aceros.html">Aceros</a></li>
+          <li><a class="dropdown-item active" href="Afilados.html">Afilados</a></li>
+          <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+        </ul>
+      </div>
+      <a class="nav-link text-white" href="contactanos.html"><i class="bi bi-envelope me-2"></i>Contáctanos</a>
+    </div>
+  </div>
+
+
+  <!-- Navbar y menú offcanvas copiados tal cual del código anterior (omitido aquí por brevedad) -->
+
+<main><div class="container my-5"><h1 class="text-center mb-4">EXXTRAL</h1><p class="text-justify">Smarter. Faster. Cleaner. The Why Behind EXXTRAL®-Plus</p><p class="text-justify">En voestalpine , hacemos mucho más que producir recubrimientos: ayudamos a los fabricantes y maquinistas a superar los desafíos reales que enfrentan día a día en el taller.</p><p class="text-justify">EXXTRAL®-Plus fue desarrollado por nuestra marca hermana eifeler, con un propósito claro: ayudarte a maquinar más duro, más rápido y de manera más limpia — con mayor vida útil de la herramienta, mejor eficiencia y menos tiempos muertos.</p><table class="table table-bordered mt-4"><thead><tr><th>Propiedad</th><th>Valor</th></tr></thead><tbody><tr><td>Microdureza HV 0.05</td><td>3300 ± 300 HV</td></tr><tr><td>Espesor del recubrimiento</td><td>2 – 4 µm</td></tr><tr><td>Temperatura máxima de operación</td><td>800°C / 1470°F</td></tr><tr><td>Coef. de fricción contra el acero</td><td>0.7</td></tr><tr><td>Color</td><td>anthracite</td></tr></tbody></table><p class="text-justify">¿Por qué elegir a EXXTRAL®-Plus?</p><p class="text-justify">Dureza en caliente extrema y resistencia a la oxidación — mantiene su rendimiento incluso a temperaturas de hasta 800 °C, superando a los recubrimientos TiAlN tradicionales.
+Ideal para maquinado en seco — reduce o elimina el uso de refrigerantes.
+Bajo coeficiente de fricción — mejora la evacuación de viruta y minimiza la generación de calor.
+Mayor vida útil de la herramienta — recubrimiento más grueso, ideal para barrenado y fresado.
+Mayor tenacidad — reduce el desgaste prematuro de filos y mejora la estabilidad de la herramienta.</p><p class="text-justify">Ideal para:
+Maquinado de alta dureza
+Barrenado y fresado de alta velocidad
+Herramientas de corte de carburo cementado
+Maquinado en seco o procesos de alta eficiencia</p><p class="text-justify">Materiales compatibles:
+Aceros al carbono
+Aleaciones de acero
+Acero inoxidable
+Hierro fundido
+Aleaciones a base de níquel</p><p class="text-justify">EXXTRAL®-Plus fue creado para quienes exigen más: Más vida útil en la herramienta, mayor productividad y menos limitaciones en el maquinado.</p><p class="text-justify">¿Listo para llevar tu rendimiento en maquinado al siguiente nivel?</p></div></main>
+
+  <!-- Decoraciones finales -->
+  <div class="position-relative">
+    <img src="img/burbuja2_derecha_fondo.JPG" alt="Burbuja" class="burbuja-derecha">
+    <img src="img/mancha_izquierda_fondo.JPG" alt="Mancha" class="mancha-izquierda">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="img/pie de pagina.jpeg" alt="Pie de página Grupo Ancor" class="footer-imagen">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tratamientos Térmicos - Grupo Ancor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="img/groAncor.ico" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .encabezado-decorativo {
+      position: relative;
+      padding: 20px 0 100px;
+      background-color: #fff;
+    }
+
+    .encabezado-rosa {
+      background: linear-gradient(90deg, #7b00b3, #d83264);
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border-radius: 0 40px 40px 0;
+      width: 50%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .circulos_encabezado,
+    .burbujas-arriba,
+    .burbuja-derecha,
+    .mancha-fondo,
+    .mancha-izquierda {
+      position: absolute;
+      z-index: 1;
+      max-width: 100px;
+      pointer-events: none;
+    }
+
+    .circulos_encabezado { top: 0; right: 0; }
+    .burbujas-arriba { top: 550px; left: 10px; }
+    .mancha-fondo { bottom: -280px; right: 0; }
+    .burbuja-derecha { right: 20px; bottom: 20px; }
+    .mancha-izquierda { left: 0; bottom: 20px; }
+
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .encabezado-rosa {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        width: 90%;
+      }
+
+      .circulos_encabezado,
+      .burbujas-arriba,
+      .burbuja-derecha,
+      .mancha-fondo,
+      .mancha-izquierda {
+        max-width: 60px;
+        opacity: 0.5;
+      }
+    }
+
+    .img-contenido {
+      height: 260px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .img-bloque {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .img-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .img-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-contacto {
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado decorativo -->
+  <div class="encabezado-decorativo">
+    <div class="encabezado-logo d-flex justify-content-around align-items-center flex-wrap gap-3 px-3">
+      <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="max-height: 45px;">
+      <img src="img/voestalphine.png" alt="Voestalpine" style="max-height: 45px;">
+      <img src="img/bohler.jpg" alt="Bohler" style="max-height: 45px;">
+    </div>
+    <div class="encabezado-rosa"><h2 class="section-title">¿Quiénes somos?</h2></div>
+    <img src="img/circulos_encabezado.JPG" alt="Círculos" class="circulos_encabezado">
+    <img src="img/burbujas_fondo1_arriba.JPG" alt="Burbujas" class="burbujas-arriba">
+    <img src="img/mancha_fondo.JPG" alt="Mancha fondo" class="mancha-fondo">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-light py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="height: 110px;">
+      </a>
+      <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+      </button>
+      <div class="d-none d-lg-flex gap-4 align-items-center">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="Acerca_de.html">Acerca de nosotros</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+            <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+            <li><a class="dropdown-item" href="Aceros.html">Aceros</a></li>
+            <li><a class="dropdown-item" href="Afilados.html">Afilados</a></li>
+            <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+          </ul>
+        </div>
+        <a class="nav-link" href="contactanos.html">Contáctanos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú Offcanvas -->
+  <div class="offcanvas offcanvas-end text-white" tabindex="-1" id="menuLateral" style="background-color: #11276d;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold">Grupo Industrial Ancor</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3 fs-6">
+      <a class="nav-link text-white" href="index.html"><i class="bi bi-house me-2"></i>Inicio</a>
+      <a class="nav-link text-white" href="Acerca_de.html"><i class="bi bi-info-circle me-2"></i>Acerca de nosotros</a>
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+          <i class="bi bi-gear me-2"></i>Servicios
+        </a>
+        <ul class="dropdown-menu bg-light">
+          <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+          <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+          <li><a class="dropdown-item" href="Aceros.html">Aceros</a></li>
+          <li><a class="dropdown-item" href="Afilados.html">Afilados</a></li>
+          <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+        </ul>
+      </div>
+      <a class="nav-link text-white" href="contactanos.html"><i class="bi bi-envelope me-2"></i>Contáctanos</a>
+    </div>
+  </div>
+<!-- Sección Quiénes Somos -->
+<section class="vision-mision text-center">
+  
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 text-start">
+        <h3>Visión</h3>
+        <p>En Grupo Industrial Ancor, aspiramos a ser reconocidos por ofrecer excelencia en soluciones de tratamientos térmicos. Nuestra visión es forjar un futuro, donde el acero de Grupo Industrial Ancor sea sinónimo de confianza, durabilidad y progreso.</p>
+        <h3>Misión</h3>
+        <p>En Grupo Industrial Ancor, nuestra misión es ofrecer soluciones de tratamientos térmicos de acero de la más alta calidad, respaldadas por un servicio personalizado.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="img/groAncor.JPG" class="img-fluid rounded shadow" alt="Grupo Ancor logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Descripción general -->
+<section class="container text-center my-5">
+  <img src="img/descubre.JPG" class="img-fluid mb-3 rounded shadow" alt="Equipo">
+  <p class="fs-5">En Grupo Industrial Ancor, nos enorgullece ofrecer una de las gamas más completas de servicios de Tratamientos Térmicos. Estamos al servicio de voestalpine y BOHLER con una línea completa de equipos diseñados para satisfacer todos sus requisitos, sin importar el tamaño o la complejidad de sus proyectos.</p>
+</section>
+
+<!-- Lista de servicios -->
+<section class="container">
+  <ul class="fs-6">
+    <li><strong>Nitruración:</strong> Mejoramos resistencia de agarre y vida útil de componentes.</li>
+    <li><strong>Templado:</strong> Técnicas en vacío y atmósfera controlada para mejorar propiedades.</li>
+    <li><strong>Alivio del estrés:</strong> Garantiza estabilidad y durabilidad en piezas tratadas.</li>
+    <li><strong>Recocido:</strong> Opciones en vacío, ambiente y brillante para optimizar estructura.</li>
+    <li><strong>Endurecimiento por precipitación:</strong> Mejora resistencia y vida útil.</li>
+    <li><strong>Homogenización:</strong> Uniformidad en composición química y propiedades.</li>
+    <li><strong>Bastidores personalizados:</strong> Adaptación a necesidades específicas de proceso.</li>
+  </ul>
+</section>
+
+ <div class="position-relative">
+          <img src="img/burbuja2_derecha_fondo.JPG" alt="Burbuja" class="burbuja-derecha">
+          <img src="img/mancha_izquierda_fondo.JPG" alt="Mancha" class="mancha-izquierda">
+        </div>
+
+<!-- Galería de imágenes -->
+<section class="container my-5">
+  <div class="row img-gallery">
+    <div class="col-6 col-md-3"><img src="img/1.JPG" alt="Dureza Rockwell digital"></div>
+    <div class="col-6 col-md-3"><img src="img/2.JPG" alt="Acero en racks industriales"></div>
+    <div class="col-6 col-md-3"><img src="img/3.JPG" alt="Curva de tratamiento térmico"></div>
+    <div class="col-6 col-md-3"><img src="img/4.JPG" alt="Placas en producción"></div>
+    <div class="col-6 col-md-3"><img src="img/5.JPG" alt="Piezas de precisión"></div>
+    <div class="col-6 col-md-3"><img src="img/6.JPG" alt="Horno industrial"></div>
+    <div class="col-6 col-md-3"><img src="img/7.JPG" alt="Interior del horno de vacío"></div>
+    <div class="col-6 col-md-3"><img src="img/8.JPG" alt="Piezas tratadas en cadena"></div>
+    <div class="col-6 col-md-3"><img src="img/9.JPG" alt="Material listo para hornos"></div>
+    <div class="col-6 col-md-3"><img src="img/10.JPG" alt="Componentes industriales"></div>
+    <div class="col-6 col-md-3"><img src="img/11.JPG" alt="Racks metálicos"></div>
+    <div class="col-6 col-md-3"><img src="img/12.JPG" alt="Control de procesos industriales"></div>
+  </div>
+</section>
+<div class="d-flex justify-content-center gap-3 flex-wrap text-secondary small">
+          <div><img src="img/sobre.png" alt="Correo" class="logo-contacto">proyecto@grupoindustrialancor.com</div>
+          <div><img src="img/mundo.png" alt="Web" class="logo-contacto">grupoindustrialancor.com</div>
+          <div><img src="img/telefono.png" alt="Teléfono" class="logo-contacto">5527841859</div>
+        </div>
+      </div>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="img/pie de pagina.jpeg" alt="Pie de página Grupo Ancor" class="footer-imagen">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
