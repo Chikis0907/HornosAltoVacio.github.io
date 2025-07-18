@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aceros - Grupo Ancor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="img/groAncor.ico" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .encabezado-decorativo {
+      position: relative;
+      padding: 20px 0 100px;
+      background-color: #fff;
+    }
+    .encabezado-rosa {
+      background: linear-gradient(90deg, #7b00b3, #d83264);
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border-radius: 0 40px 40px 0;
+      width: 50%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .circulos_encabezado,
+    .burbujas-arriba,
+    .burbuja-derecha,
+    .mancha-fondo,
+    .mancha-izquierda {
+      position: absolute;
+      z-index: 1;
+      max-width: 100px;
+      pointer-events: none;
+    }
+    .circulos_encabezado { top: 0; right: 0; }
+    .burbujas-arriba { top: 550px; left: 10px; }
+    .mancha-fondo { bottom: -280px; right: 0; }
+    .burbuja-derecha { right: -30px; bottom: 20px; }
+    .mancha-izquierda { bottom: 10px; }
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+    footer {
+      margin-top: auto;
+    }
+    .logo-contacto {
+      height: 20px;
+      margin-right: 8px;
+    }
+    @media (max-width: 768px) {
+      .encabezado-rosa {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+      }
+      .circulos_encabezado,
+      .burbujas-arriba,
+      .burbuja-derecha,
+      .mancha-fondo,
+      .mancha-izquierda {
+        max-width: 60px;
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="encabezado-decorativo">
+    <div class="encabezado-logo d-flex justify-content-around align-items-center flex-wrap gap-3 px-3">
+      <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="max-height: 45px;">
+      <img src="img/voestalphine.png" alt="Voestalpine" style="max-height: 45px;">
+      <img src="img/bohler.jpg" alt="Bohler" style="max-height: 45px;">
+    </div>
+    <div class="encabezado-rosa">ACEROS</div>
+    <img src="img/circulos_encabezado.JPG" alt="Círculos" class="circulos_encabezado">
+    <img src="img/burbujas_fondo1_arriba.JPG" alt="Burbujas" class="burbujas-arriba">
+    <img src="img/mancha_fondo.JPG" alt="Mancha fondo" class="mancha-fondo">
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-light bg-light py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/groAncor.jpeg" alt="Grupo Ancor" style="height: 110px;">
+      </a>
+      <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+      </button>
+      <div class="d-none d-lg-flex gap-4 align-items-center">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="Acerca_de.html">Acerca de nosotros</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+            <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+            <li><a class="dropdown-item active" href="Aceros.html">Aceros</a></li>
+            <li><a class="dropdown-item" href="Afilados.html">Afilados</a></li>
+            <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+          </ul>
+        </div>
+        <a class="nav-link" href="contactanos.html">Contáctanos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENÚ OFFCANVAS -->
+  <div class="offcanvas offcanvas-end text-white" tabindex="-1" id="menuLateral" style="background-color: #11276d;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold">Grupo Industrial Ancor</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3 fs-6">
+      <a class="nav-link text-white" href="index.html"><i class="bi bi-house me-2"></i>Inicio</a>
+      <a class="nav-link text-white" href="Acerca_de.html"><i class="bi bi-info-circle me-2"></i>Acerca de nosotros</a>
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+          <i class="bi bi-gear me-2"></i>Servicios
+        </a>
+        <ul class="dropdown-menu bg-light">
+          <li><a class="dropdown-item" href="Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+          <li><a class="dropdown-item" href="Recubrimientos.html">Recubrimientos</a></li>
+          <li><a class="dropdown-item active" href="Aceros.html">Aceros</a></li>
+          <li><a class="dropdown-item" href="Afilados.html">Afilados</a></li>
+          <li><a class="dropdown-item" href="Maquilados.html">Maquilados</a></li>
+        </ul>
+      </div>
+      <a class="nav-link text-white" href="contactanos.html"><i class="bi bi-envelope me-2"></i>Contáctanos</a>
+    </div>
+  </div>
+
+  <main style="position: relative;">
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Aceros</h1>
+      <p class="text-center">
+        En Grupo Industrial Ancor, ofrecemos una amplia variedad de aceros industriales para cubrir las necesidades específicas de cada cliente y aplicación. Trabajamos con aceros de alta calidad, cuidadosamente seleccionados para garantizar resistencia, durabilidad y desempeño en procesos industriales exigentes.
+        <br><br>
+        Contamos con aceros para herramientas, aceros aleados, aceros templados y aceros inoxidables, adecuados para procesos de manufactura, mecanizado, tratamientos térmicos y más.
+        <br><br>
+        Nuestro equipo técnico brinda asesoría personalizada para ayudarte a elegir el material adecuado según las propiedades mecánicas, condiciones de trabajo y requerimientos del proyecto.
+      </p>
+
+      <div class="row text-center mt-5">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/acerofrio.webp" class="img-fluid rounded" alt="Acero trabajo en frío">
+          <h3 class="mt-3"> Acero ara trabajo en frío</h3>
+          <p>Este tipo de acero está diseñado para operaciones a temperatura ambiente, como la fabricación de troqueles, cortadores, matrices y herramientas de precisión.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Alta dureza y resistencia al desgaste para mantener el filo y la forma.</li>
+    <li>Excelente tenacidad que permite soportar impactos sin fracturarse.</li>
+    <li>Buena resistencia a la deformación plástica durante el uso intensivo.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Herramientas de corte para operaciones de mecanizado en frío.</li>
+    <li>Troqueles para estampado y embutido en metal y plásticos.</li>
+    <li>Moldes para fabricación de piezas pequeñas y de alta precisión.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Acero al carbono templado y revenido, aceros aleados con cromo, molibdeno o vanadio.</p>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/aceroplastico.jpg" class="img-fluid rounded mx-auto d-block" alt="Acero para moldes" style="max-width: 280px; height: auto;">
+          <h3 class="mt-3">Acero para moldes de plástico</h3>
+          <p>Estos aceros están especialmente formulados para la fabricación de moldes usados en la industria del plástico, donde los ciclos térmicos repetidos son comunes.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Excelente resistencia a la fatiga térmica para evitar grietas por cambios constantes de temperatura.</li>
+    <li>Alta maquinabilidad para lograr acabados muy pulidos y precisos.</li>
+    <li>Buena resistencia a la corrosión causada por agentes químicos presentes en algunos plásticos.</li>
+    <li>Capacidad para mantener la estabilidad dimensional durante el proceso de moldeo.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Moldes para inyección, extrusión y soplado de plásticos.</li>
+    <li>Componentes de moldes con canales de enfriamiento y sistemas internos complejos.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Aceros al carbono de alta pureza, aceros aleados con bajo contenido de carbono y tratamientos térmicos específicos.</p>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/acerocaliente.jpg" class="img-fluid rounded" alt="Acero trabajo en caliente" style="max-width: 350px; height: auto;">
+          <h3 class="mt-3">Acero para trabajo en caliente</h3>
+          <p>Este acero está diseñado para resistir condiciones extremas de temperatura y estrés durante procesos de fundición, forja y extrusión.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Mantiene la dureza y estructura cristalina a altas temperaturas, evitando deformaciones o recristalizaciones.</li>
+    <li>Resistencia superior a la oxidación y al desgaste térmico.</li>
+    <li>Alta tenacidad para resistir choques térmicos y mecánicos.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Moldes y matrices para fundición a presión y forja en caliente.</li>
+    <li>Herramientas usadas en extrusión de metales y plásticos a temperaturas elevadas.</li>
+    <li>Componentes en hornos industriales y equipos de procesamiento térmico.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Aceros aleados con cromo, molibdeno, tungsteno y vanadio.</p>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/aceroaltavelocidad.webp" class="img-fluid rounded" alt="Acero alta velocidad">
+          <h3 class="mt-3">Acero de alta velocidad</h3>
+          <p>El acero de alta velocidad es un material especializado para herramientas de corte de alto rendimiento.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Mantiene el filo y dureza incluso a temperaturas superiores a 600 °C, generadas durante el corte a alta velocidad.</li>
+    <li>Excelente resistencia al desgaste por abrasión y a la fatiga térmica.</li>
+    <li>Alta tenacidad que previene la fractura y el desgaste prematuro.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Brocas, fresas, cuchillas y herramientas de torneado para maquinaria CNC.</li>
+    <li>Herramientas utilizadas en corte de metales ferrosos y no ferrosos.</li>
+    <li>Aplicaciones que requieren alta precisión y durabilidad en la manufactura.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Aceros aleados con tungsteno, molibdeno, cobalto y vanadio.</p>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/aceroconstruccion.webp" class="img-fluid rounded" alt="Acero para construcción mecánica" style="max-width: 310px; height: auto;">
+          <h3 class="mt-3">Acero para construcción mecánica</h3>
+          <p>Estos aceros están orientados a la fabricación de piezas estructurales sometidas a cargas mecánicas elevadas.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Alta resistencia mecánica para soportar esfuerzos de tracción, compresión y torsión.</li>
+    <li>Buena ductilidad y tenacidad para evitar fracturas bajo cargas dinámicas.</li>
+    <li>Capacidad de soldadura para ensamblajes y reparaciones en campo.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Ejes, engranajes, pernos, y componentes estructurales en maquinaria industrial.</li>
+    <li>Piezas de soporte y refuerzo en la construcción de equipos y vehículos.</li>
+    <li>Partes sometidas a desgaste y esfuerzos repetitivos en líneas de producción.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Aceros estructurales ASTM A36, aceros aleados HSLA (High Strength Low Alloy).</p>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <img src="img/aceroinoxidable.webp" class="img-fluid rounded" alt="Acero inoxidable" style="max-width: 220px; height: auto;">
+          <h3 class="mt-3">Acero inoxidable</h3>
+         <p>El acero inoxidable es reconocido por su alta resistencia a la corrosión y durabilidad en ambientes agresivos.</p>
+
+  <h3>Propiedades principales:</h3>
+  <ul>
+    <li>Excelente resistencia a la oxidación y corrosión, incluso en ambientes húmedos y químicos.</li>
+    <li>Amplia variedad de grados para aplicaciones específicas, desde uso alimentario hasta industrial.</li>
+    <li>Buen acabado superficial y facilidad para limpieza y mantenimiento.</li>
+  </ul>
+
+  <h3>Aplicaciones típicas:</h3>
+  <ul>
+    <li>Equipos y utensilios en la industria alimentaria, farmacéutica y médica.</li>
+    <li>Componentes expuestos a ambientes corrosivos, como tuberías, tanques y estructuras marinas.</li>
+    <li>Construcción de maquinaria que requiere alta higiene y resistencia.</li>
+  </ul>
+
+  <p><strong>Materiales comunes:</strong> Acero inoxidable austenítico (304, 316), ferrítico, martensítico y dúplex.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <h4>¿Necesitas asesoría sobre qué tipo de acero utilizar?</h4>
+        <p>Contáctanos y nuestro equipo técnico te orientará para elegir el acero ideal según tus requerimientos técnicos y operativos.</p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap text-secondary small">
+      <div><img src="img/sobre.png" alt="Correo" class="logo-contacto">proyecto@grupoindustrialancor.com</div>
+      <div><img src="img/mundo.png" alt="Web" class="logo-contacto">grupoindustrialancor.com</div>
+      <div><img src="img/telefono.png" alt="Teléfono" class="logo-contacto">5527841859</div>
+    </div>
+  </main>
+
+  <!-- Decoraciones finales -->
+  <div class="position-relative">
+    <img src="img/burbuja2_derecha_fondo.JPG" alt="Burbuja" class="burbuja-derecha">
+    <img src="img/mancha_izquierda_fondo.JPG" alt="Mancha" class="mancha-izquierda">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="img/pie de pagina.jpeg" alt="Pie de página Grupo Ancor" class="footer-imagen">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
