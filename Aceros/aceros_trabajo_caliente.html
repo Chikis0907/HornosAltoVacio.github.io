@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aceros - Grupo Ancor</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+<link href="../img/groAncor.ico" rel="icon" type="image/x-icon"/>
+<!-- Google Font: Lato -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet"/>
+<style>
+    
+
+    body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #11276d; /* Azul oscuro del menú */
+  font-weight: 700;
+}
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .encabezado-decorativo {
+      position: relative;
+      padding: 20px 0 10px;
+      background-color: #fff;
+    }
+
+    
+    .encabezado-rosa {
+      background: linear-gradient(90deg, #7b00b3, #d83264);
+      color: white;
+      font-weight: bold;
+      font-size: 1.8rem;
+      padding: 15px 30px;
+      border-radius: 0 40px 40px 0;
+      width: 85%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .circulos_encabezado,
+    .burbujas-arriba,
+    .burbuja-derecha,
+    .mancha-fondo,
+    .mancha-izquierda {
+      position: absolute;
+      z-index: 1;
+      max-width: 100px;
+      pointer-events: none;
+    }
+    .circulos_encabezado { top: 0; right: 0; }
+    .burbujas-arriba { top: 1200px; left: 10px; }
+    .mancha-fondo { bottom: -1100px; right: 0; }
+    .burbuja-derecha { right: -30px; bottom: 20px; }
+    .mancha-izquierda { bottom: 10px; }
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+    footer {
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      .encabezado-rosa {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+      }
+      .circulos_encabezado,
+      .burbujas-arriba,
+      .burbuja-derecha,
+      .mancha-fondo,
+      .mancha-izquierda {
+        max-width: 60px;
+        opacity: 0.5;
+         position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+      }
+    }
+
+ .navbar a.nav-link,
+.navbar .dropdown-menu a.dropdown-item {
+  color: white;
+}
+
+.navbar .dropdown-menu {
+  background-color: #11276d;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #0d1e4a;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+.card-img-top {
+  object-fit: cover;
+  height: 180px;
+}
+     .descripcion-acero {
+      color: #000;
+      text-align: justify;
+      font-size: 0.95rem;
+    }
+
+    .section-title-bar {
+      background-color: #212529;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 2rem;
+    }
+
+    .scroll-cards {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .scroll-cards .card {
+      min-width: 250px;
+      max-width: 250px;
+      flex: 0 0 auto;
+      border: none;
+    }
+
+    .card-img-top {
+      border-radius: 0.5rem;
+    }
+    .responsive-table {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+    position: relative;
+  z-index: 1;
+  color: black;
+  padding: 20px;
+  }
+  .scroll-cards::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scroll-cards::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+   .navbar-toggler-icon {
+    filter: invert(1); /* blanco sobre fondo oscuro */
+  }
+
+ @media (min-width: 768px) {
+  table {
+    font-size: 13px;
+  }
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 6px 10px;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: 768px) {
+  table {
+    font-size: 13px;
+  }
+  td, th {
+    padding: 6px 10px;
+    vertical-align: middle;
+  }
+  thead th {
+    background-color: inherit !important;
+    color: inherit !important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="encabezado-decorativo">
+<div class="encabezado-logo d-flex justify-content-around align-items-center flex-wrap gap-3 px-3">
+<img alt="Grupo Ancor" src="../img/groAncor.jpeg" style="max-height: 55px;"/>
+<img alt="Voestalpine" src="../img/voestalphine.png" style="max-height: 25px;"/>
+<img alt="Bohler" src="../img/bohler.jpg" style="max-height: 20px;"/>
+</div>
+<div class="encabezado-rosa">Aceros-Trabajo en Caliente</div>
+<img alt="Círculos" class="circulos_encabezado" src="../img/circulos_encabezado.JPG"/>
+<img alt="Burbujas" class="burbujas-arriba" src="../img/burbujas_fondo1_arriba.JPG"/>
+<img alt="Mancha fondo" class="mancha-fondo" src="../img/mancha_fondo.JPG"/>
+</div>
+<!-- NAVBAR -->
+<nav class="navbar py-3 position-relative mb-4" style="background-color: #11276d;">
+<div class="container d-flex justify-content-center align-items-center text-white">
+<!-- Botón hamburguesa solo visible en móviles -->
+<button class="navbar-toggler d-lg-none position-absolute end-0" data-bs-target="#menuLateral" data-bs-toggle="offcanvas" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Menú de navegación -->
+<div class="d-none d-lg-flex gap-5 align-items-center">
+<a class="nav-link text-white" href="../index.html">Inicio</a>
+<a class="nav-link text-white" href="../Acerca_de.html">Acerca de nosotros</a>
+<div class="dropdown">
+<a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button">Servicios</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="../Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+<li><a class="dropdown-item" href="../Recubrimientos.html">Recubrimientos</a></li>
+<li><a class="dropdown-item" href="../Aceros.html">Aceros</a></li>
+<li><a class="dropdown-item" href="../Afilados.html">Afilados</a></li>
+<li><a class="dropdown-item" href="../Maquilados.html">Maquinados</a></li>
+</ul>
+</div>
+<a class="nav-link text-white" href="../contactanos.html">Contáctanos</a>
+</div>
+</div>
+</nav>
+<!-- Menú lateral (offcanvas solo para móviles) -->
+<div class="offcanvas offcanvas-end text-white" id="menuLateral" style="background-color: #11276d;" tabindex="-1">
+<div class="offcanvas-header border-bottom">
+<h5 class="offcanvas-title fw-bold">Grupo Ancor</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body d-flex flex-column gap-3 fs-6">
+<a class="nav-link text-white" href="../index.html"><i class="bi bi-house me-2"></i>Inicio</a>
+<a class="nav-link text-white" href="../Acerca_de.html"><i class="bi bi-info-circle me-2"></i>Acerca de nosotros</a>
+<div class="dropdown">
+<a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button">
+<i class="bi bi-gear me-2"></i>Servicios
+          </a>
+<ul class="dropdown-menu bg-light">
+<li><a class="dropdown-item" href="../Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+<li><a class="dropdown-item" href="../Recubrimientos.html">Recubrimientos</a></li>
+<li><a class="dropdown-item" href="../Aceros.html">Aceros</a></li>
+<li><a class="dropdown-item" href="../Afilados.html">Afilados</a></li>
+<li><a class="dropdown-item" href="../Maquilados.html">Maquinados</a></li>
+</ul>
+</div>
+<a class="nav-link text-white" href="../contactanos.html"><i class="bi bi-envelope me-2"></i>Contáctanos</a>
+</div>
+</div>
+<!-- ESPACIO EN BLANCO DESPUÉS DEL MENÚ -->
+<div class="my-1"></div>
+<!-- Navbar y menú offcanvas copiados tal cual del código anterior (omitido aquí por brevedad) -->
+<main style="position: relative;">
+<section class="position-relative text-white text-center mb-5" style="background: url('../img/Aceros_trabajo_calliente.JPG') center/cover no-repeat; min-height: 450px;">
+<div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+<div class="position-absolute top-50 start-50 translate-middle text-white text-center" style="z-index: 2;">
+<h1 class="display-4 fw-bold" style="color: white !important;">Aceros Trabajo en Caliente</h1>
+<p class="lead">Resistencia térmica y mecánica a altas temperaturas.</p>
+</div>
+</section>
+<div class="table-responsive responsive-table mb-5"><table border="1" cellpadding="5" cellspacing="0" style="font-family: Arial; font-size: 13px; width: 100%; border-collapse: collapse; text-align: center;">
+<thead style="background-color: #004a99; color: white;">
+<tr><th colspan="16">ACEROS PARA TRABAJO EN CALIENTE</th></tr>
+<tr>
+<th rowspan="2">UDDEHOLM</th><th rowspan="2">BOHLER</th><th colspan="10">ANALISIS QUIMICO</th><th rowspan="2">Otros</th><th rowspan="2">Dureza de Suministro</th><th rowspan="2">AISI</th><th rowspan="2">DIN</th>
+</tr>
+<tr><th>C</th><th>Si</th><th>Mn</th><th>Cr</th><th>Mo</th><th>W</th><th>V</th><th>Ni</th><th>Co</th><th>Al</th></tr>
+</thead>
+<tbody>
+<tr><td>ORVAR-2M</td><td>W302</td><td>0.39</td><td>1.0</td><td>0.4</td><td>5.3</td><td>1.3</td><td></td><td>0.9</td><td></td><td></td><td></td><td></td><td>180</td><td>H13</td><td>1.2344</td></tr>
+<tr><td>ORVAR SUPREME</td><td>W302 ISOBLOC</td><td>0.39</td><td>1.0</td><td>0.4</td><td>5.2</td><td>1.4</td><td></td><td>0.9</td><td></td><td></td><td></td><td></td><td>180</td><td>H13 PREMIUM</td><td>1.2344</td></tr>
+<tr><td>DIEVAR</td><td></td><td>0.35</td><td>0.2</td><td>0.5</td><td>5.0</td><td>2.3</td><td></td><td>0.6</td><td></td><td></td><td></td><td></td><td>160</td><td></td><td></td></tr>
+<tr><td>W360 ISOBLOC</td><td>W360 ISOBLOC</td><td>0.5</td><td>0.2</td><td>0.25</td><td>4.5</td><td>3.0</td><td></td><td>0.55</td><td></td><td></td><td></td><td></td><td>205</td><td></td><td></td></tr>
+<tr><td>QRO-90 SUPREME</td><td></td><td>0.38</td><td>0.3</td><td>0.75</td><td>2.6</td><td>2.3</td><td></td><td>0.9</td><td></td><td></td><td></td><td></td><td>180</td><td></td><td></td></tr>
+<tr><td></td><td>W400</td><td>0.36</td><td>0.2</td><td>0.25</td><td>5.0</td><td>1.30</td><td></td><td>0.45</td><td></td><td></td><td></td><td></td><td>205</td><td>-H11</td><td>1.2343</td></tr>
+<tr>
+<td>VEX</td>
+<td></td>
+<td colspan="10" style="border: none; text-align: center;">Cr, Mo, V + Al</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+<div class="table-responsive responsive-table mb-5"><table border="1" cellpadding="6" cellspacing="0" style="font-family: Arial; font-size: 13px; width: 100%; border-collapse: collapse; text-align: center;">
+<thead style="background-color: #007bb5; color: white;">
+<tr>
+<th rowspan="2">ACERO</th>
+<th rowspan="2">RECOCIDO SUAVE</th>
+<th rowspan="2">PRECALENTAMIENTO</th>
+<th rowspan="2">TEMP. DE AUSTENITIZACIÓN</th>
+<th rowspan="2">TEMPLE</th>
+<th colspan="7">DUREZA DESPUÉS DE REVENIDO</th>
+</tr>
+<tr>
+<th>100</th>
+<th>200</th>
+<th>300</th>
+<th>400</th>
+<th>500</th>
+<th>550</th>
+<th>600</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>ARNE</td><td>280</td><td>870</td><td>800–850</td><td>Aceite, aire</td><td>64</td><td>63</td><td>61</td><td>59</td><td>57</td><td>56</td><td>55</td></tr>
+<tr><td>RIGOR</td><td>280</td><td>860</td><td>800–850</td><td>Aceite, aire</td><td>65</td><td>64</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td></tr>
+<tr><td>SVERKER 21</td><td>280</td><td>860</td><td>960–980</td><td>Aceite, aire</td><td>64</td><td>63</td><td>61</td><td>60</td><td>58</td><td>57</td><td>56</td></tr>
+<tr><td>K340 ISODUR</td><td>280</td><td>860</td><td>1030–1050</td><td>Aceite, aire</td><td>64</td><td>63</td><td>61</td><td>60</td><td>58</td><td>57</td><td>55</td></tr>
+<tr><td>K360 ISODUR</td><td>280</td><td>860</td><td>1040–1080</td><td>Aceite, aire</td><td>65</td><td>64</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td></tr>
+<tr><td>CALMAX</td><td>280</td><td>860</td><td>950–980</td><td>Aceite, aire</td><td>59</td><td>58</td><td>56</td><td>54</td><td>52</td><td>50</td><td>48</td></tr>
+<tr><td>CALDIE</td><td>280</td><td>860</td><td>1020–1050</td><td>Aceite, aire</td><td>60</td><td>59</td><td>58</td><td>56</td><td>54</td><td>53</td><td>50</td></tr>
+<tr><td>VANADIS 4 EXTRA</td><td>280</td><td>860</td><td>1040–1080</td><td>Aceite, aire</td><td>65</td><td>64</td><td>63</td><td>61</td><td>60</td><td>58</td><td>56</td></tr>
+<tr><td>K294</td><td>280</td><td>860</td><td>1020–1040</td><td>Aceite, aire</td><td>65</td><td>64</td><td>63</td><td>61</td><td>59</td><td>58</td><td>56</td></tr>
+<tr><td>K390 Microclean</td><td>280</td><td>860</td><td>1050–1100</td><td>Aceite, aire</td><td>66</td><td>65</td><td>64</td><td>63</td><td>61</td><td>59</td><td>57</td></tr>
+<tr><td>K490 Microclean</td><td>280</td><td>860</td><td>1050–1100</td><td>Aceite, aire</td><td>65</td><td>64</td><td>63</td><td>61</td><td>59</td><td>57</td><td>55</td></tr>
+<tr><td>K890 Microclean</td><td>280</td><td>860</td><td>1050–1100</td><td>Aceite, aire</td><td>66</td><td>65</td><td>64</td><td>62</td><td>60</td><td>58</td><td>56</td></tr>
+</tbody>
+</table></div>
+</p>
+<!-- Características (debajo de la tabla) -->
+<div class="table-responsive responsive-table mb-5"><table border="1" cellpadding="6" cellspacing="0" style="font-family: Arial; font-size: 13px; width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+<thead>
+<tr style="background-color: #c74a23; color: white;">
+<th colspan="13">CARACTERÍSTICAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acero con buena resistencia mecánica y alta tenacidad para extrusión de aluminio y moldes de inyección de plástico</td>
+<td>Acero de alta tenacidad y muy buena resistencia a la fatiga térmica, ideal para moldes de función a presión</td>
+<td>Acero de alto rendimiento para fundición a presión, máxima resistencia a la fatiga térmica y al desgaste</td>
+<td>Acero patentado para herramientas de trabajo en caliente y frío. Dónde se necesita excelente resistencia al desgaste Y/O tenacidad</td>
+<td>Acero patentado para el trabajos en caliente, proporciona una combinación excepcional de alta resistencia a los choques térmicos y a la fatiga térmica</td>
+<td>Acero fabricado y refinado en vacío. Ideal en la inyección de aluminio y plástico, para herramientas en donde hay problemas graves de fatiga térmica y Pulido</td>
+<td>Acero desarrollado específicamente para aplicaciones de trabajo en caliente, la composición química mantiene un buen nivel de dureza por por nitrudos formados de aluminio en lugar de nitruros de cromo. Excelente para dados de extrusión y troqueles donde se requiere una excelente resistencia al desgaste y tenacidad después nitruracion</td>
+</tr>
+</tbody>
+</table></div>
+<!-- Contacto -->
+<div class="container mt-5">
+<div class="d-flex justify-content-center gap-4 flex-wrap text-secondary fs-5 border-top pt-4">
+<div>
+<img alt="Correo" class="logo-contacto me-2" src="../img/sobre.png" style="width: 24px; height: 24px;"/>
+        proyecto@grupoindustrialancor.com
+      </div>
+<div>
+<img alt="Web" class="logo-contacto me-2" src="../img/mundo.png" style="width: 24px; height: 24px;"/>
+        grupoindustrialancor.com
+      </div>
+<div>
+<img alt="Teléfono" class="logo-contacto me-2" src="../img/telefono.png" style="width: 24px; height: 24px;"/>
+        5527841859
+      </div>
+</div>
+</div>
+</main>
+<!-- Decoraciones finales -->
+<div class="position-relative">
+<img alt="Burbuja" class="burbuja-derecha" src="../img/burbuja2_derecha_fondo.JPG"/>
+<img alt="Mancha" class="mancha-izquierda" src="../img/mancha_izquierda_fondo.JPG"/>
+</div>
+<!-- FOOTER -->
+<footer>
+<img alt="Pie de página Grupo Ancor" class="footer-imagen" src="../img/pie de pagina.jpeg"/>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maquinados - Grupo Ancor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="../img/groAncor.ico" />
+  <!-- Google Font: Lato -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+  <style>
+    
+    body {
+  font-family: 'Lato', sans-serif;
+}
+
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    .img-contenido {
+      height: 260px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+.img-contenidoo {
+      height: 180px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .img-bloque {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .encabezado-decorativo {
+      position: relative;
+      padding: 20px 0 10px;
+      background-color: #fff;
+    }
+
+    
+    .encabezado-rosa {
+      background: linear-gradient(90deg, #7b00b3, #d83264);
+      color: white;
+      font-weight: bold;
+      font-size: 1.8rem;
+      padding: 15px 30px;
+      border-radius: 0 40px 40px 0;
+      width: 85%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .circulos_encabezado,
+    .burbujas-arriba,
+    .burbuja-derecha,
+    .mancha-fondo,
+    .mancha-izquierda {
+      position: absolute;
+      z-index: 1;
+      max-width: 100px;
+      pointer-events: none;
+    }
+    .circulos_encabezado { top: 0; right: 0; }
+    .burbujas-arriba { top: 1000px; left: 10px; }
+    .mancha-fondo { bottom: -1100px; right: 0; }
+    .burbuja-derecha { right: -30px; bottom: 20px; }
+    .mancha-izquierda { bottom: 10px; }
+    .footer-imagen {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+    }
+    footer {
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      .encabezado-rosa {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+      }
+      .circulos_encabezado,
+      .burbujas-arriba,
+      .burbuja-derecha,
+      .mancha-fondo,
+      .mancha-izquierda {
+        max-width: 60px;
+        opacity: 0.5;
+      }
+    }
+
+ .navbar a.nav-link,
+.navbar .dropdown-menu a.dropdown-item {
+  color: white;
+}
+
+.navbar .dropdown-menu {
+  background-color: #11276d;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #0d1e4a;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+.card-img-top {
+  object-fit: cover;
+  height: 180px;
+}
+     .descripcion-acero {
+      color: #000;
+      text-align: justify;
+      font-size: 0.95rem;
+    }
+
+    .section-title-bar {
+      background-color: #212529;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 2rem;
+    }
+
+    .scroll-cards {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .scroll-cards .card {
+      min-width: 250px;
+      max-width: 250px;
+      flex: 0 0 auto;
+      border: none;
+    }
+
+    .card-img-top {
+      border-radius: 0.5rem;
+    }
+    .responsive-table {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+  }
+  .scroll-cards::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scroll-cards::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+   .navbar-toggler-icon {
+    filter: invert(1); /* blanco sobre fondo oscuro */
+  }
+
+ @media (min-width: 768px) {
+  table {
+    font-size: 13px;
+  }
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 6px 10px;
+    vertical-align: middle;
+  }
+}
+  </style>
+</head>
+<body>
+
+
+  
+  <div class="encabezado-decorativo">
+    <div class="encabezado-logo d-flex justify-content-around align-items-center flex-wrap gap-3 px-3">
+      <img src="../img/groAncor.jpeg" alt="Grupo Ancor" style="max-height: 50px;">
+      <img src="../img/voestalphine.png" alt="Voestalpine" style="max-height: 15px;">
+      <img src="../img/bohler.jpg" alt="Bohler" style="max-height: 10px;">
+    </div>
+    <div class="encabezado-rosa">Maquinado por Rectificado</div>
+    <img src="../img/circulos_encabezado.JPG" alt="Círculos" class="circulos_encabezado">
+    <img src="../img/burbujas_fondo1_arriba.JPG" alt="Burbujas" class="burbujas-arriba">
+    <img src="../img/mancha_fondo.JPG" alt="Mancha fondo" class="mancha-fondo">
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar py-3 position-relative mb-4" style="background-color: #11276d;">
+  <div class="container d-flex justify-content-center align-items-center text-white">
+    
+    <!-- Botón hamburguesa solo visible en móviles -->
+   <!-- Botón hamburguesa solo visible en móviles -->
+<button class="navbar-toggler d-lg-none position-absolute end-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+    <!-- Menú de navegación -->
+    <div class="d-none d-lg-flex gap-5 align-items-center">
+      <a class="nav-link text-white" href="../index.html">Inicio</a>
+      <a class="nav-link text-white" href="../Acerca_de.html">Acerca de nosotros</a>
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+          <li><a class="dropdown-item" href="../Recubrimientos.html">Recubrimientos</a></li>
+          <li><a class="dropdown-item " href="../Aceros.html">Aceros</a></li>
+          <li><a class="dropdown-item" href="../Afilados.html">Afilados</a></li>
+          <li><a class="dropdown-item" href="../Maquilados.html">Maquinados</a></li>
+        </ul>
+      </div>
+      <a class="nav-link text-white" href="../contactanos.html">Contáctanos</a>
+    </div>
+  </div>
+</nav>
+ <!-- Menú lateral (offcanvas solo para móviles) -->
+    <div class="offcanvas offcanvas-end text-white" tabindex="-1" id="menuLateral" style="background-color: #11276d;">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold">Grupo Ancor</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-3 fs-6">
+        <a class="nav-link text-white" href="../index.html"><i class="bi bi-house me-2"></i>Inicio</a>
+        <a class="nav-link text-white" href="../Acerca_de.html"><i class="bi bi-info-circle me-2"></i>Acerca de nosotros</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-gear me-2"></i>Servicios
+          </a>
+          <ul class="dropdown-menu bg-light">
+            <li><a class="dropdown-item" href="../Tratramientos_Termicos.html">Tratamientos térmicos</a></li>
+            <li><a class="dropdown-item" href="../Recubrimientos.html">Recubrimientos</a></li>
+            <li><a class="dropdown-item" href="../Aceros.html">Aceros</a></li>
+            <li><a class="dropdown-item" href="../Afilados.html">Afilados</a></li>
+            <li><a class="dropdown-item" href="../Maquilados.html">Maquinados</a></li>
+          </ul>
+        </div>
+        <a class="nav-link text-white" href="../contactanos.html"><i class="bi bi-envelope me-2"></i>Contáctanos</a>
+      </div>
+    </div>
+<!-- ESPACIO EN BLANCO DESPUÉS DEL MENÚ -->
+<div class="my-1"></div>
+
+
+
+
+  <!-- Navbar y menú offcanvas copiados tal cual del código anterior (omitido aquí por brevedad) -->
+
+
+<main style="position: relative;">
+
+  
+<section class="position-relative text-white text-center mb-5" style="background: url('../img/MAQUINADO_RECTIFICADO.png') center/cover no-repeat; min-height: 350px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+    <div class="position-absolute top-50 start-50 translate-middle text-white text-center" style="z-index: 2;">
+      <h1 class="display-4 fw-bold" style="color: white !important;">Rectificado</h1>
+      <p class="lead"></p>
+    </div>
+  </section>
+
+
+<!-- CONTENIDO PRINCIPAL -->
+  <main class="container my-5">
+  <!-- Sección Afilados -->
+  <section class="mb-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2>¿Qué es el rectificado?</h2>
+        <p>El rectificado es un proceso de maquinado abrasivo de alta precisión, que utiliza
+una muela giratoria para remover pequeñas cantidades de material y obtener una
+excelente calidad superficial y precisión dimensional.
+Se utiliza principalmente como proceso de acabado, especialmente en materiales
+duros como acero templado o inoxidable, donde otros métodos no alcanzan la
+calidad deseada.</p>
+<P><h2>¿Cómo se aplica?</P></h2>
+        <ul>
+          <li>Preparación de la pieza y la máquina.</li>
+          <li>Selección de la muela abrasiva según el material (por ejemplo, óxido de aluminio
+para acero).</li>
+          <li>Configuración de parámetros: avance, profundidad de corte, velocidad de la
+muela.</li>
+<li>Rectificado controlado de superficies externas, internas o planas.</li>
+          <li>Medición e inspección final con instrumentos de precisión.</li>
+        </ul>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="rectificados1.png" alt="Proceso de tratamientos térmicos" class="img-fluid img-contenido rounded shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué elegir afilado? -->
+  <section class="row align-items-center mb-5">
+    <div class="col-md-6 text-center">
+      <img src="maquinados2.png" alt="Control de parámetros" class="img-fluid rounded shadow img-contenido">
+    </div>
+    <div class="col-md-6">
+      <h3>Tipos de rectificado</h3>
+      <ol>
+  <li>
+    <strong>Rectificado superficial (plano)</strong>
+    <ul>
+      <li>Se utiliza para obtener caras planas.</li>
+      <li>Muy común en moldes, placas o bases.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Rectificado cilíndrico externo</strong>
+    <ul>
+      <li>Para piezas cilíndricas externas como ejes.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Rectificado cilíndrico interno</strong>
+    <ul>
+      <li>Para orificios y cavidades internas con alta precisión.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Rectificado sin centros (centerless)</strong>
+    <ul>
+      <li>No requiere sujetar la pieza; ideal para producciones en serie de ejes o pernos.</li>
+    </ul>
+  </li>
+   <strong>Rectificado de roscas</strong>
+    <ul>
+      <li>Forma roscas helicoidales de precisión.</li>
+    </ul>
+    <strong>Rectificado por coordenadas (jig grinding)</strong>
+    <ul>
+      <li>Utilizado en moldes y matrices para cavidades muy complejas.</li>
+    </ul>
+</ol>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- Proceso de afilado -->
+  <section class="row align-items-center mb-5">
+    <div class="col-md-6">
+      <h3>Materiales comunes a rectificar</h3>
+      <ul>
+        <li>Aceros templados (D2, H13, 4140 tratado)</li>
+        <li>Aceros inoxidables (304, 316, 17-4PH)</li>
+        <li>Aleaciones duras (carburos, titanio)</li>
+        <li>Cerámicos técnicos</li>
+        <li>CTambién se aplica en aluminio o cobre, aunque en menor medida.</li>
+
+      </ul>
+    </div>
+    
+  </section>
+
+ <!-- Tipos de herramientas -->
+<section class="mb-5">
+  <div class="container text-center">
+    <h2>Aplicaciones del rectificado</h2>
+    <p class="mb-4">
+       <!-- TEXTO -->
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-start">
+        <ol>
+          <li>
+            <strong>Sector Y Ejemplo de uso</strong><br>
+            La herramienta rota y se mueve sobre el material. Crea ranuras, agujeros, cavidades o contornos complejos.<br>
+           
+          </li>
+          <li>
+            <strong><!-- TEXTO --></strong><br>
+            Moldes y matrices: Cavidades precisas, planos pulidos<br>
+            
+          </li>
+          <li>
+            <strong><!-- TEXTO --></strong><br>
+            Automotriz: Válvulas: árboles de levas, frenos<br>
+           
+          </li>
+          <li>
+            <strong><!-- TEXTO --></strong><br>
+            Mecánica general: Ejes, pistones, componentes móviles<br>
+          
+          </li>
+          <li>
+            <strong><!-- TEXTO --></strong><br>
+           Industria médica: Piezas quirúrgicas de acero inoxidable<br>
+         
+          </li>
+          <li>
+            <strong><!-- TEXTO --></strong><br>
+           Herramientas de corte: Afilado y reacondicionado de
+
+herramientas<br>
+           
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Características (debajo de la tabla) -->
+<table border="1" cellpadding="6" cellspacing="0" style="font-family: Arial; font-size: 13px; width: 100%; border-collapse: collapse; margin-top: 20px; text-align: center;">
+  <thead>
+    <tr style="background-color: #c74a23; color: white;">
+      <th colspan="13">VENTAJAS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alta precisión dimensional (hasta ±0.001 mm)</td>
+      <td>Excelente acabado superficial (Ra 0.2–1.6 μm)</td>
+      <td>Permite trabajar materiales muy duros</td>
+      <td>Mejora la durabilidad y rendimiento de piezas críticas</td>
+      <td>Ahorro de tiempo</td>
+</tr>
+  </tbody>
+</table>
+
+
+
+
+  <!-- Contacto -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-center gap-4 flex-wrap text-secondary fs-5 border-top pt-4">
+      <div>
+        <img src="../img/sobre.png" alt="Correo" class="logo-contacto me-2" style="width: 24px; height: 24px;">
+        proyecto@grupoindustrialancor.com
+      </div>
+      <div>
+        <img src="../img/mundo.png" alt="Web" class="logo-contacto me-2" style="width: 24px; height: 24px;">
+        grupoindustrialancor.com
+      </div>
+      <div>
+        <img src="../img/telefono.png" alt="Teléfono" class="logo-contacto me-2" style="width: 24px; height: 24px;">
+        5527841859
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+  <!-- Decoraciones finales -->
+  <div class="position-relative">
+    <img src="../img/burbuja2_derecha_fondo.JPG" alt="Burbuja" class="burbuja-derecha">
+    <img src="../img/mancha_izquierda_fondo.JPG" alt="Mancha" class="mancha-izquierda">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../img/pie de pagina.jpeg" alt="Pie de página Grupo Ancor" class="footer-imagen">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
